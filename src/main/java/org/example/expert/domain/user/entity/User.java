@@ -18,13 +18,15 @@ public class User extends Timestamped {
     @Column(unique = true)
     private String email;
     private String password;
+    private String nickName;
     @Enumerated(EnumType.STRING)
     private UserRole userRole;
 
-    public User(String email, String password, UserRole userRole) {
+    public User(String email, String password, UserRole userRole, String nickName) {
         this.email = email;
         this.password = password;
         this.userRole = userRole;
+        this.nickName = nickName;
     }
 
     private User(Long id, String email, UserRole userRole) {
